@@ -1,0 +1,20 @@
+{
+  "name": "Spring Boot DevContainer",
+  "image": "mcr.microsoft.com/devcontainers/java:1-21-bullseye",
+  "features": {
+    "ghcr.io/devcontainers/features/maven:1": {
+      "version": "3.9"
+    }
+  },
+  "postCreateCommand": "mvn -q -ntp dependency:go-offline",
+  "forwardPorts": [8080],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "vmware.vscode-spring-boot",
+        "pivotal.vscode-spring-boot-dev-pack"
+      ]
+    }
+  }
+}
