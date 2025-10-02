@@ -1,14 +1,7 @@
 {
   "name": "Spring Boot DevContainer",
   "image": "mcr.microsoft.com/devcontainers/java:1-21-bullseye",
-  "features": {
-    "ghcr.io/devcontainers-extra/features/maven-sdkman": {}
-  },
-  "mounts": [
-    "source=${localEnv:HOME}/.ssh,target=/root/.ssh,type=bind",
-    "source=${localEnv:HOME}/.gnupg,target=/root/.gnupg,type=bind"
-  ],
-  "postCreateCommand": "sudo cp /workspaces/template-devcontainer-springboot/.devcontainer/myroot.crt /usr/local/share/ca-certificates/myroot.crt && sudo update-ca-certificates && sudo apt-get update && sudo apt-get install -y maven && mvn -q -ntp dependency:go-offline",
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y maven && mvn -q -ntp dependency:go-offline",
   "forwardPorts": [8080],
   "customizations": {
     "vscode": {
