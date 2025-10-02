@@ -4,7 +4,11 @@
   "features": {
     "ghcr.io/devcontainers-extra/features/maven-sdkman": {}
   },
-  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y maven && mvn -q -ntp dependency:go-offline",
+  "mounts": [
+    "source=${localEnv:HOME}/.ssh,target=/root/.ssh,type=bind",
+    "source=${localEnv:HOME}/.gnupg,target=/root/.gnupg,type=bind"
+  ],
+  "postCreateCommand": "sudo cp /workspaces/template-devcontainer-springboot/.devcontainer/myroot.crt /usr/local/share/ca-certificates/myroot.crt && sudo update-ca-certificates && sudo apt-get update && sudo apt-get install -y maven && mvn -q -ntp dependency:go-offline",
   "forwardPorts": [8080],
   "customizations": {
     "vscode": {
@@ -16,4 +20,5 @@
     }
   }
 }
+
 
