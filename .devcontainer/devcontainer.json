@@ -1,6 +1,8 @@
 {
   "name": "Spring Boot DevContainer",
-  "image": "mcr.microsoft.com/devcontainers/java:1-21-bullseye",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
   "features": {
     "ghcr.io/devcontainers-extra/features/maven-sdkman": {}
   },
@@ -16,3 +18,4 @@
     }
   }
 }
+
