@@ -4,7 +4,7 @@
   "features": {
     "ghcr.io/devcontainers-extra/features/maven-sdkman": {}
   },
-  "postCreateCommand": "apt-get update && apt-get install -y maven && mvn -q -ntp dependency:go-offline",
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y maven && mvn -q -ntp dependency:go-offline",
   "forwardPorts": [8080],
   "customizations": {
     "vscode": {
