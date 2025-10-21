@@ -1,18 +1,15 @@
 {
-  "name": "Spring Boot DevContainer",
-  "runArgs": ["--name", "Spring-Boot-DevContainer"],
-  "image": "mcr.microsoft.com/devcontainers/java:1-21-bullseye",
-  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y maven && mvn -q -ntp dependency:go-offline",
-  "forwardPorts": [8080],
+  "name": "Python DevContainer",
+  "runArgs": ["--name", "Python-DevContainer"],
+  "image": "mcr.microsoft.com/devcontainers/python:3.11",
+  "postCreateCommand": "pip install -r requirements.txt",
+  "forwardPorts": [8000],
   "customizations": {
     "vscode": {
       "extensions": [
-        "vscjava.vscode-java-pack",
-        "vmware.vscode-spring-boot",
-        "pivotal.vscode-spring-boot-dev-pack"
+        "ms-python.python",
+        "ms-python.vscode-pylance"
       ]
     }
   }
 }
-
-
