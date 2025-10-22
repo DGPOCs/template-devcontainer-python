@@ -4,8 +4,6 @@ from __future__ import annotations
 from fastapi import FastAPI
 from pydantic import BaseModel, Field
 
-from app.settings import get_settings
-
 
 class WelcomeMessage(BaseModel):
     """Schema for requests and responses involving the welcome message."""
@@ -14,7 +12,6 @@ class WelcomeMessage(BaseModel):
 
 
 app = FastAPI(title="Dev Containers Python Template")
-settings = get_settings()
 
 
 class _WelcomeMessageStore:
