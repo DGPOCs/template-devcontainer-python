@@ -32,6 +32,15 @@ uvicorn app.main:app --reload --port 8000
 
 La API estará disponible en `http://localhost:8000`.
 
+### Configuración de variables de entorno
+
+La aplicación puede comunicarse con la API de Dev.to utilizando una API key almacenada en un archivo `.env`.
+
+1. Copia el archivo `.env.example` a `.env`.
+2. Sustituye el valor de `DEVTO_API_KEY` por tu clave privada de Dev.to.
+
+El paquete [`python-dotenv`](https://pypi.org/project/python-dotenv/) se encarga de cargar el contenido del `.env` de forma automática al iniciar la aplicación.
+
 ### Ejemplo de peticiones
 
 - Obtener el mensaje actual:
